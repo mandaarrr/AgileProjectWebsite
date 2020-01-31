@@ -1,0 +1,57 @@
+﻿.bounce {
+    -moz-animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 1369px) {
+    element.style {
+        padding: 2vh;
+        padding-top: 20vh;
+        margin: 0;
+    }
+}
+
+.card {
+    padding: 0px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text{
+    font-size: 14px;
+}
+
+.rounded {
+    border-radius: 1rem;
+}
+
+@media (min-width: 1366px) {
+    element.style {
+        width: 215px;
+        height: 52px;
+        font-size: 3vh;
+    }
+}

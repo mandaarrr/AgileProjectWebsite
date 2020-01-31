@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Medicare</title>
+    
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    
+    <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    
+<!--Smooth Scrolling Reference - https://github.com/cferdinandi/smooth-scroll!-->
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>var scroll = new SmoothScroll('a[href*="#"]');</script>
+    
+</head>
+
+<body style="background-color: rgb(0,0,0);">
+
+    <div>
+        <div class="header-blue" style="background-image: url(&quot;assets/img/bg-img.png&quot;);background-repeat: no-repeat;background-size: cover;height: 100vh;">
+            <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="color: white;padding: 7vh;padding-top: 5vh;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#" style="        margin: 0;
+            color: white;
+            text-decoration: none;
+            font-size: 4vh;
+            font-weight: bold;">Team10</a><a class="navbar-brand" href="#" style="margin: 0;color: white;text-decoration: none;font-size: 3vh;/*font-weight: bold;*/">About Us</a>
+                </div>
+            </nav>
+            <div class="container" style="padding: 0;">
+                <div class="row" style="padding: 2vh;padding-top: 11vh;margin: 0;">
+                    <div class="col" style="padding: 0;">
+                        <h1 style="color: rgb(255,255,255);font-size: 92px;font-family: Raleway, sans-serif;filter: blur(0px) saturate(36%);text-align: center;">Helping you find affordable medicare near you</h1>
+                    </div>
+                </div>
+                <div class="row" style="margin: 0;padding: 0;margin-top: 6vh;">
+                    <div class="col" style="margin-top: 0;">
+                        <h1 style="  color: rgb(255,255,255); font-size: 37px; text-align: center; margin: 0px;">
+                            <a style="color: white" href=#form-page>Lets Begin</a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row bounce" style="margin: 0;padding: 0;margin-top: -1vh;">
+                    <div class="col">
+                        <h1 style="color: rgb(255,255,255); font-size: 37px;text-align: center;margin: 0px;margin-top: 0;"><div><a style="color: white" href=#form-page>&#8964;</a></div></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-page" style="height: 100vh;background-image: url(&quot;assets/img/form-bg.png&quot;);padding: 8vh;">
+        <div style="width: 100%;height: auto;padding: 6vh;background-color: #ffffff;border-radius: 2em;padding-top: 2vh;padding-right: 6vh;padding-bottom: 6vh;padding-left: 6vh;">
+            <form method="GET" action="Results.html" style="width: 100%;">
+                <div class="form-row" style="margin-top: 5vh;width: 100%;">
+                    <div class="col" style="width: 100%;padding: 0;height: auto;">
+                        <h1 style="font-size: 6vh;text-align: center;font-weight: bold;color: rgb(0,0,0);height: 100%;vertical-align: middle;margin: 0;padding: 2vh;">Find Medicare</h1>
+                    </div>
+                </div>
+                <div class="form-row" style="width: 100%;height: 4vh;margin-top: 2vh;">
+                    <div class="col" style="width: 25%;padding: 0;height: 4vh;">
+                        <h1 style="font-size: 4vh;margin-bottom: 0;height: auto;width: 100%;padding: 0;">Search by DRG</h1>
+                    </div>
+                    <!--<div class="col-xl-9" style="width: 75%;padding: 0;height: 4vh;">
+                        <h1 style="font-size: 4vh;color: rgb(33,37,41);width: 100%;height: 4vh;padding: 0;margin: 0;">Search by Procedure</h1>
+                    </div>-->
+                </div>
+                <div class="form-row" style="width: 100%;height: auto;">
+                    <div class="col" style="width: 25%;padding: 1vh;padding-left: 0;"><input class="form-control" name="drgid" type="text" style="width: 100%;font-size: 4vh;"></div>
+                    <!--<div class="col-xl-9" style="width: 75%;padding: 1vh;padding-left: 0;"><input class="form-control" name="procname" type="text" style="width: 100%;height: auto;font-size: 4vh;"></div>-->
+                </div>
+                <div class="form-row" style="margin-top: 3vh;width: 100%;height: 4vh;margin-left: 0;margin-right: 0;">
+                    <div class="col" style="height: 4vh;padding: 0;">
+                        <h1 style="font-size: 4vh;margin: 0;height: 4vh;">In State</h1>
+                    </div>
+                </div>
+                <div class="form-row" style="width: 100%;padding: 0;height: auto;margin: 0;">
+                    <div class="col" style="width: 25%;padding: 1vh;padding-left: 0;">
+                        <input id="LocEntry" name="state" class="form-control" type="text" style="width: 100%;font-size: 4vh;" />
+                    </div>
+
+                    <!--<div class="col-xl-4" style="width: 25%;padding: 1vh;padding-left: 0;"><button class="btn btn-primary" type="button" style="height: 100%;font-size: 4vh;width: 100%;background-color: rgba(41,41,41,0.8);">Get Current Location</button></div>!-->
+                </div>
+                <div class="form-row" style="margin-top: 3vh;width: 100%;margin-right: 0;">
+                    <div class="col" style="width: 100%;padding: 0;height: auto;">
+                        <h1 style="font-size: 5vh;text-align: center;font-weight: bold;color: rgb(0,0,0);height: 100%;vertical-align: middle;margin: 0;padding: 2vh;">Additional Filters</h1>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 3vh;width: 100%;height: 4vh;margin-left: 0;margin-right: 0;">
+                    <div class="col" style="height: 4vh;padding: 0;">
+                        <h1 style="font-size: 4vh;margin: 0;height: 4vh;">Price Range</h1>
+                    </div>
+                </div>
+                <div class="form-row" style="width: 100%;padding: 0;height: auto;margin: 0;">
+                    <div class="col" style="width: 25%;padding: 1vh;padding-left: 0;height: auto;"><input class="form-control" type="text" name="lowerPrice" style="width: 100%;font-size: 4vh;"></div>
+                    <div class="col" style="max-width: 3.5%;">
+                        <h1 style="font-size: 4vh;margin: 0;height: 4vh;margin-top: 2vh;width: auto;">to</h1>
+                    </div>
+                    <div class="col" style="padding: 1vh;padding-left: 0;"><input class="form-control" type="text" name="upperPrice" style="width: 100%;font-size: 4vh;"></div>
+                    <div class="col">
+                        <h1 style="font-size: 4vh;margin: 0;height: fit;margin-top: 2vh;width: 100%;">dollars</h1>
+                    </div>
+                    <div class="col-xl-4" style="width: 25%;padding: 1vh;padding-left: 0;height: auto;"></div>
+                    <div class="col" style="height: auto;"><button class="btn btn-primary" type="submit" style="height: 100%;font-size: 4vh;width: 100%;background-color: rgb(0,0,0);">Search</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
