@@ -84,11 +84,11 @@
         
         var queryString = window.location.search;
         
-        var url = "https://team10agile.azurewebsites.net/api/query?drgid=70&lat=-94&lon=39&maxdist=100000";
+        var url = "https://team10agile.azurewebsites.net/api/query?";
         
-        //var url = apiurl.concat(queryString);
+        var url = apiurl.concat(queryString);
         
-        //console.log(url);
+        
 
         function dynamicSort(property) {
             var sortOrder = 1;
