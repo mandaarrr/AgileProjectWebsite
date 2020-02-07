@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Results</title>
-    
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="css/site.css">
-    <link rel="stylesheet" href="css/mystyles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-grid.css" />
+    <link
+      rel="stylesheet"
+      href="lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
 
     <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
@@ -25,237 +25,476 @@
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    
-<!--Smooth Scrolling Reference - https://github.com/cferdinandi/smooth-scroll!-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
 
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<script>var scroll = new SmoothScroll('a[href*="#"]');</script>
-    
-</head>
+    <!--Smooth Scrolling Reference - https://github.com/cferdinandi/smooth-scroll!-->
 
-
-<!DOCTYPE html>
-<html style="width: 100%;height: 100vh;">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Results Page.bdesign</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-
-
-<body style="width: 100%;height: 100vh;">
-    <div style="width: 100%;height: 100vh;/*overflow: overlay;*/">
-        <div class="row" style="width: 100%;height: 100vh;margin: 0;">
-            <div id="results-col" class="col" style="height: 100vh;overflow: scroll;">
-                <div class="row text-center d-xl-flex" style="padding: 3vh;">
-                    <div class="col">
-                        <h3 style="text-align: center;width: 100%;height: 100%;margin: 0;padding: 0;">Search Results</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col align-items-center align-content-center">
-                        <div class="dropdown align-self-center" style="width: 100%;height: auto;"><button class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="width: 100%;height: auto;">Sort By</button>
-                            <div class="dropdown-menu text-black-50 align-items-center align-content-center"
-                                role="menu" style="width: 100%;text-align: center;"><a class="dropdown-item" role="presentation" href="#">Name</a><a class="dropdown-item" role="presentation" href="#">Price: High to Low</a><a class="dropdown-item" role="presentation" href="#">Price: Low to High</a><a class="dropdown-item"
-                                    role="presentation" href="#">Distance</a></div>
-                        </div>
-                    </div>
-                </div>
-              <!--  <div class="card" style="padding: 0px;margin-top: 1vh;margin-bottom: 1vh;">
-                    <div class="card-body">
-                        <h4 class="card-title" style="font-weight: bold;">Hospital Name</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Cost: $$$$$</h6>
-                        <h6 class="text-muted card-subtitle mb-2" style="font-size: 16px;">Distance: 123 miles</h6>
-                        <p class="card-text" style="font-size: 14px;">Address</p>
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-xl-9" style="padding: 0;width: 100%;height: 100vh;"><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBTxspkggtGV7JmBdKyIpDwP7iioSGofCE&amp;q=Paris%2C+France&amp;zoom=11" width="100%" height="100%" style="width: 100%;height: 100vh;"></iframe></div>
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        
-        var queryString = window.location.search;
-        
-        var apiurl = "https://team10agile.azurewebsites.net/api/query";
-        
-        var url =  apiurl.concat(queryString);
-        
+      var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+  </head>
 
-        //Dynamic Sort Function Reference : Ege Ozcan https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        function dynamicSort(property) {
-            var sortOrder = 1;
-            if (property[0] === "-") {
-                sortOrder = -1;
-                property = property.substr(1);
-            }
-            return function (a, b) {
-                /* next line works with strings and numbers,
-                 * and you may want to customize it to your needs
-                 */
-                var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-                return result * sortOrder;
-            }
+  <body style="width: 100%;height: 100vh;">
+    <div style="width: 100%;height: 100vh;/*overflow: overlay;*/">
+      <div class="row" style="width: 100%;height: 100vh;margin: 0;">
+        <div
+          id="results-col"
+          class="col"
+          style="height: 100vh;overflow: scroll;"
+        >
+          <div class="row text-center d-xl-flex" style="padding-top: 3vh;">
+            <div id="results-header" class="col">
+              <button
+                id="return-btn"
+                class="btn btn-dark"
+                onclick="location.href='index.html'"
+              >
+                Return to Homepage
+              </button>
+            </div>
+          </div>
+          <div class="row text-center d-xl-flex" style="padding: 3vh;">
+            <div id="results-header" class="col">
+              <h3
+                style="text-align: center;width: 100%;height: 100%;margin: 0;padding: 0;"
+              >
+                Search Results
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col align-items-center align-content-center">
+              <div
+                class="dropdown align-self-center"
+                style="width: 100%;height: auto;"
+              >
+                <button
+                  class="btn btn-dark dropdown-toggle"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                  type="button"
+                  style="width: 100%;height: auto;"
+                  id="sort-button"
+                >
+                  Sorted By
+                </button>
+                <div
+                  class="dropdown-menu text-black-50 align-items-center align-content-center"
+                  role="menu"
+                  style="width: 100%;text-align: center;"
+                >
+                  <a
+                    id="name-sort"
+                    class="dropdown-item"
+                    role="presentation"
+                    href="#"
+                    >Name</a
+                  >
+                  <a
+                    id="price-sort-hl"
+                    class="dropdown-item"
+                    role="presentation"
+                    href="#"
+                    >Price: High to Low</a
+                  >
+                  <a
+                    id="price-sort-lh"
+                    class="dropdown-item"
+                    role="presentation"
+                    href="#"
+                    >Price: Low to High</a
+                  >
+                  <a
+                    id="distance-sort"
+                    class="dropdown-item active"
+                    role="presentation"
+                    href="#"
+                    >Distance</a
+                  >
+                <a
+                    id="rank-sort"
+                    class="dropdown-item"
+                    role="presentation"
+                    href="#"
+                    >Recommended</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="loading-screen">
+            <div class="lds-roller" style="margin-top: 45vh">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+          <div id="map" class="col-xl-9" style="padding: 0;width: 100%;height: 100vh;"></div>
+            <script>
+
+        	 var queryString = window.location.search;
+
+       		 var apiurl = "https://team10agile.azurewebsites.net/api/query";
+
+       		 var url =  apiurl.concat(queryString);
+
+           	 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmV3aGFydDIxMjEiLCJhIjoiY2s2N3prbGM1MDdpODNkb3VoNmxwOW1mciJ9.h5zP9LEJ21MkJoK4HPCNbQ';
+            var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-92.5, 38], // starting position [lng, lat]
+            zoom: 3.3 // starting zoom
+
+
+            });
+
+            var latLongs = [];
+         $.getJSON(url, function(data) {
+                for(var i = 0; i < data.length; i++) {
+                      latLongs.push([data[i].latLong[0], data[i].latLong[1]]);
+                     	var geojson = {
+	                        type: 'FeatureCollection',
+	                        features: [{
+	                            type: 'Feature',
+	                            geometry: {
+		                            type: 'Point',
+		                            coordinates: [data[i].latLong[0], data[i].latLong[1]]
+	                            },
+	                            properties: {
+	                            title: data[i].providerName,
+                                description: data[i].totalCost
+	                            }
+                            }]
+                        };
+                        var el = document.createElement('div');
+		                  el.className = "marker";
+		                  // make a marker for each feature and add to the map
+		                  new mapboxgl.Marker(el)
+		                    .setLngLat(geojson.features[0].geometry.coordinates)
+							.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+		                	.setHTML('<h4 class="card-title">' + toTitleCase(data[i].providerName) 
+										+ '</h4><h6 class="text-muted card-subtitle mb-2"> Cost: $' + numberWithCommas(data[i].totalCost) + '</h6>'
+										+ '<h6 class="tetext-muted card-subtitle mb-2">' + toTitleCase(data[i].providerStreetAddress) 
+										+ ", "+ toTitleCase(data[i].providerCity)  
+										+ ", "+ data[i].providerState
+										+ '</h6>'))
+		                    .addTo(map);
+                      };
+                     // console.log(map.getBounds());
+                      map.fitBounds(latLongs, {maxZoom: 5});
+                    });
+
+                                // add markers to map
+
+            </script>
+      </div>
+    </div>
+    <script>
+      var queryString = window.location.search;
+      var apiurl = "https://team10agile.azurewebsites.net/api/query";
+      var url = apiurl.concat(queryString);
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const lat = urlParams.get("lat");
+      const lon = urlParams.get("lon");
+
+      //Loading Screen
+      jQuery.ajaxSetup({
+        beforeSend: function() {
+          $("#loading-screen").show();
+        },
+        complete: function() {
+          $("#loading-screen").hide();
+        },
+        success: function() {}
+      });
+
+      //Dynamic Sort Function Reference : Ege Ozcan https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+      function dynamicSort(property) {
+        var sortOrder = 1;
+        if (property[0] === "-") {
+          sortOrder = -1;
+          property = property.substr(1);
         }
+        return function(a, b) {
+          /* next line works with strings and numbers,
+           * and you may want to customize it to your needs
+           */
+          var result =
+            a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+          return result * sortOrder;
+        };
+      }
 
-        
-        //Convert String to Title Case Reference: Greg Dean https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
-        function toTitleCase(str) {
-            return str.replace(
-                /\w\S*/g,
-                function (txt) {
-                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                }
-            );
+      //Dynamic Sort Function Reference : Ege Ozcan https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+      function dynamicSortDesc(property) {
+        var sortOrder = 1;
+        if (property[0] === "-") {
+          sortOrder = -1;
+          property = property.substr(1);
         }
+        return function(a, b) {
+          /* next line works with strings and numbers,
+           * and you may want to customize it to your needs
+           */
+          var result =
+            a[property] > b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+          return result * sortOrder;
+        };
+      }
 
-        async function getHospDataByName() {
+      //Convert String to Title Case Reference: Greg Dean https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
+      function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
+
+      //Add Commas to Numbers Reference: Elias Zamaria & LLoyd Banks https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+        
+      function getDistance(lat1, lon1, lat2, lon2, unit) {
+        var radlat1 = (Math.PI * lat1) / 180;
+        var radlat2 = (Math.PI * lat2) / 180;
+        var radlon1 = (Math.PI * lon1) / 180;
+        var radlon2 = (Math.PI * lon2) / 180;
+        var theta = lon1 - lon2;
+        var radtheta = (Math.PI * theta) / 180;
+        var dist =
+          Math.sin(radlat1) * Math.sin(radlat2) +
+          Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        dist = Math.acos(dist);
+        dist = (dist * 180) / Math.PI;
+        dist = dist * 60 * 1.1515;
+        if (unit == "K") {
+          dist = dist * 1.609344;
+        }
+        if (unit == "N") {
+          dist = dist * 0.8684;
+        }
+        return dist;
+      }
+
+      function getHospData(sortBy, sortDesc = false) {
+        var staticUrl = url;
+        $.getJSON(staticUrl, function(data) {
             
-            const response = await fetch(url);
-            const data = await response.json();
- 
-
-            data.sort(dynamicSort("providerName"));
-            console.log(data);
-
-            var i = 0;
-
+          if (sortBy != "default") {
             for (i = 0; i < data.length; i++) {
-                const name = data[i].providerName;
-                var cost = data[i].totalCost;
-                var streetname = data[i].providerStreetAddress;
-                var city = data[i].providerCity;
-                var state = data[i].providerState;
-                var zip = data[i].providerZipCode;
-
-                var newCard = document.createElement("div");
-                newCard.className = "card";
-
-                var newCardBody = document.createElement("div");
-                newCardBody.className = "card-body";
-
-                var newCardHead = document.createElement("h4");
-                newCardHead.className = "card-title";
-
-                var newCardCost = document.createElement("h6");
-                newCardCost.className = "text-muted card-subtitle mb-2";
-
-                var newCardDistance = document.createElement("h6");
-                newCardDistance.className = "tetext-muted card-subtitle mb-2";
-
-                var newCardAddress = document.createElement("p")
-                newCardAddress.className = "card-text";
-
-                var newCardZip = document.createElement("p")
-                newCardZip.className = "card-text";
-
-                newCardHead.textContent = toTitleCase(name);
-                newCardCost.textContent = "Cost: $";
-                newCardCost.textContent += cost;
-                newCardDistance.textContent = "Distance: N/A";
-
-                newCardAddress.textContent = toTitleCase(streetname);
-                newCardAddress.textContent += ", ";
-                newCardAddress.textContent += toTitleCase(city);
-                newCardAddress.textContent += ", ";
-                newCardAddress.textContent += state;
-
-                newCardZip.textContent = "Zipcode: ";
-                newCardZip.textContent += zip;
-
-
-                var location = document.getElementById("results-col");
-
-                location.appendChild(newCard);
-                newCard.appendChild(newCardBody);
-                newCardBody.appendChild(newCardHead);
-                newCardBody.appendChild(newCardCost);
-                newCardBody.appendChild(newCardDistance);
-                newCardBody.appendChild(newCardAddress);
-                newCardBody.appendChild(newCardZip);
+              var card = document.getElementById("added-card");
+              card.remove();
             }
 
-        }
+            if (sortBy == "totalCost" && sortDesc == true) {
+              data.sort(dynamicSortDesc(sortBy));
+            } else {
+              data.sort(dynamicSort(sortBy));
+            }
+            
+            if (sortBy == "rank") {
+              var dataCpy = sortByRankJSON(data);
+              dataCpy.sort(dynamicSort("rank"));
+              data = dataCpy;
+            }
+          }
 
-        async function getHospDataByCost() {
-            const response = await fetch(url);
-            const data = await response.json();
+          if (data.length == 0) {
+            alert("No results found for current query. Please try again.");
+          } else {
+            //calculating distance from queried location to hospital
+            for (i = 0; i < data.length; i++) {
+              const hospLat = data[i].latLong[1];
+              const hospLon = data[i].latLong[0];
 
+              var dist = getDistance(hospLat, hospLon, lat, lon, "K");
 
-            data.sort(dynamicSort("totalCost"));
-
+              data[i].distance = dist;
+              
+            }
             var i = 0;
 
+            //Creating Each Card
             for (i = 0; i < data.length; i++) {
-                const name = data[i].providerName;
-                var cost = data[i].totalCost;
-                var streetname = data[i].providerStreetAddress;
-                var city = data[i].providerCity;
-                var state = data[i].providerState;
-                var zip = data[i].providerZipCode;
+              const name = data[i].providerName;
+              var cost = data[i].totalCost;
+              var streetname = data[i].providerStreetAddress;
+              var city = data[i].providerCity;
+              var state = data[i].providerState;
+              var zip = data[i].providerZipCode;
+              var distance = data[i].distance;
 
-                var newCard = document.createElement("div");
-                newCard.className = "card";
+              var newCard = document.createElement("div");
+              newCard.className = "card";
+              newCard.id = "added-card";
 
-                var newCardBody = document.createElement("div");
-                newCardBody.className = "card-body";
+              var newCardBody = document.createElement("div");
+              newCardBody.className = "card-body";
 
-                var newCardHead = document.createElement("h4");
-                newCardHead.className = "card-title";
+              var newCardHead = document.createElement("h4");
+              newCardHead.className = "card-title";
 
-                var newCardCost = document.createElement("h6");
-                newCardCost.className = "text-muted card-subtitle mb-2";
+              var newCardCost = document.createElement("h6");
+              newCardCost.className = "text-muted card-subtitle mb-2";
 
-                var newCardDistance = document.createElement("h6");
-                newCardDistance.className = "tetext-muted card-subtitle mb-2";
+              var newCardDistance = document.createElement("h6");
+              newCardDistance.className = "tetext-muted card-subtitle mb-2";
 
-                var newCardAddress = document.createElement("p")
-                newCardAddress.className = "card-text";
+              var newCardAddress = document.createElement("p");
+              newCardAddress.className = "card-text";
 
-                var newCardZip = document.createElement("p")
-                newCardZip.className = "card-text";
+              var newCardZip = document.createElement("p");
+              newCardZip.className = "card-text";
 
-                newCardHead.textContent = toTitleCase(name);
-                newCardCost.textContent = "Cost: $";
-                newCardCost.textContent += cost;
-                newCardDistance.textContent = "Distance: N/A";
+              if (sortBy == "rank")
+                  {
+                      var newCardRank = document.createElement("h6");
+                      newCardRank.className = "text-muted card-subtitle mb-2";
+                      if(i<3)
+                          {
+                              newCardRank.textContent = toTitleCase("Recommended for you")
+                          }
+                      
+                      newCardHead.textContent = i+1;
+                      newCardHead.textContent += ". ";
+                  }
+                
+                newCardHead.textContent += toTitleCase(name);
+              newCardCost.textContent = "Cost: $";
+              newCardCost.textContent += numberWithCommas(cost);
+              newCardDistance.textContent = "Location: ";
+              newCardDistance.textContent += distance.toFixed(2);
+              newCardDistance.textContent += " km away";
 
-                newCardAddress.textContent = toTitleCase(streetname);
-                newCardAddress.textContent += ", ";
-                newCardAddress.textContent += toTitleCase(city);
-                newCardAddress.textContent += ", ";
-                newCardAddress.textContent += state;
+              newCardAddress.textContent = toTitleCase(streetname);
+              newCardAddress.textContent += ", ";
+              newCardAddress.textContent += toTitleCase(city);
+              newCardAddress.textContent += ", ";
+              newCardAddress.textContent += state;
 
-                newCardZip.textContent = "Zipcode: ";
-                newCardZip.textContent += zip;
+              newCardZip.textContent = "Zipcode: ";
+              newCardZip.textContent += zip;
 
+              var location = document.getElementById("results-col");
 
-                var location = document.getElementById("results-col");
-
-                location.appendChild(newCard);
-                newCard.appendChild(newCardBody);
-                newCardBody.appendChild(newCardHead);
-                newCardBody.appendChild(newCardCost);
-                newCardBody.appendChild(newCardDistance);
-                newCardBody.appendChild(newCardAddress);
-                newCardBody.appendChild(newCardZip);
+              location.appendChild(newCard);
+              newCard.appendChild(newCardBody);
+                if (sortBy=="rank")
+                    {
+                        newCardBody.appendChild(newCardRank);
+                    }
+                
+              newCardBody.appendChild(newCardHead);
+              newCardBody.appendChild(newCardCost);
+              newCardBody.appendChild(newCardDistance);
+              newCardBody.appendChild(newCardAddress);
+              newCardBody.appendChild(newCardZip);
             }
+          }
+        });
+      }
 
+      getHospData("default");
+
+      var sortButton = document.getElementById("sort-button");
+      sortButton.textContent = "Sorted By Distance";
+
+      var el1 = document.getElementById("name-sort");
+      el1.onclick = sortByName;
+
+      var el2 = document.getElementById("price-sort-lh");
+      el2.onclick = sortByPriceLH;
+
+      var el3 = document.getElementById("price-sort-hl");
+      el3.onclick = sortByPriceHL;
+
+      var el4 = document.getElementById("distance-sort");
+      el4.onclick = sortByDistance;
+
+      var el5 = document.getElementById("rank-sort");
+      el5.onclick = sortByRank;
+
+      function sortByName() {
+        getHospData("providerName");
+        sortButton.textContent = "Sorted By Name";
+        el1.className += " active";
+        el2.className = "dropdown-item";
+        el3.className = "dropdown-item";
+        el4.className = "dropdown-item";
+        el5.className = "dropdown-item";
+
+        return false;
+      }
+
+      function sortByPriceLH() {
+        getHospData("totalCost");
+        sortButton.textContent = "Sorted By Price: Low to High";
+        el2.className += " active";
+        el1.className = "dropdown-item";
+        el3.className = "dropdown-item";
+        el4.className = "dropdown-item";
+        el5.className = "dropdown-item";
+        return false;
+      }
+
+      function sortByPriceHL() {
+        getHospData("totalCost", true);
+        sortButton.textContent = "Sorted By Price: High to Low";
+        el3.className += " active";
+        el2.className = "dropdown-item";
+        el1.className = "dropdown-item";
+        el4.className = "dropdown-item";
+        el5.className = "dropdown-item";
+        return false;
+      }
+
+      function sortByDistance() {
+        getHospData("distance");
+        sortButton.textContent = "Sorted By Distance";
+        el4.className += " active";
+        el2.className = "dropdown-item";
+        el1.className = "dropdown-item";
+        el3.className = "dropdown-item";
+        el5.className = "dropdown-item";
+      }
+
+      function sortByRank() {
+        getHospData("rank");
+        sortButton.textContent = " Sorted By Recommendations";
+        el5.className += " active";
+        el2.className = "dropdown-item";
+        el1.className = "dropdown-item";
+        el3.className = "dropdown-item";
+        el4.className = "dropdown-item";
+      }
+
+        function sortByRankJSON(data) {
+            var costSort = data.sort(dynamicSort("totalCost"));
+            var distSort = data.sort(dynamicSort("distance"));
+
+            for(var i = 0; i < costSort.length; i++) {
+                    costSort[i].rank = i+1;
+                    distSort[i].rank = i+1;
+                }
+
+            for(var i=0; i < costSort.length; i++) {
+                for(var j = 0; j < distSort.length; j++) {
+                    if (costSort[i].id === distSort[j].id) {
+                        costSort[i].rank += distSort[j].rank;
+                    }
+                }
+            }
+            return costSort; 
         }
-
-
-        getHospDataByCost();</script>
-
-
-
-
-</body>
-
+    </script>
+  </body>
 </html>
